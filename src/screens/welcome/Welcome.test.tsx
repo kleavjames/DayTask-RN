@@ -3,6 +3,10 @@ import {render, screen, fireEvent} from '@testing-library/react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import AuthStack from '../../navigation/auth';
 
+// solves my issue on svg
+// reference error
+jest.useFakeTimers();
+
 describe('SignInScreen', () => {
   it('should show the Welcome text', () => {
     const component = (
@@ -17,7 +21,7 @@ describe('SignInScreen', () => {
     expect(screen.getByText('DayTask')).toBeOnTheScreen();
   });
 
-  it("should navigate to login screen when pressing let's start", () => {
+  it("should navigate to login screen when pressing let's start", async () => {
     const component = (
       <NavigationContainer>
         <AuthStack />
@@ -26,7 +30,10 @@ describe('SignInScreen', () => {
 
     render(component);
 
-    fireEvent.press(screen.getByText("Let's Start"));
-    expect(screen.getByText('Login')).toBeOnTheScreen();
+    const toClick = await screen.findByText("Let's Start");
+    fireEvent.press(toClick);
+
+    const welcomeBack = await screen.findByText('Welcome Back!');
+    expect(welcomeBack).toBeOnTheScreen();
   });
 });
