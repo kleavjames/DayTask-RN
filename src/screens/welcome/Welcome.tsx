@@ -7,19 +7,6 @@ import {AuthStackParamList} from '../../navigation/auth';
 
 const {height} = Dimensions.get('window');
 
-const styles = StyleSheet.create({
-  welcomeImg: {
-    width: '100%',
-    height: height / 2.5,
-  },
-  header: {
-    color: colors.white,
-  },
-  title: {
-    color: colors.primary,
-  },
-});
-
 type Props = NativeStackScreenProps<AuthStackParamList, 'Welcome'>;
 
 const Welcome: FC<Props> = ({navigation}) => {
@@ -55,5 +42,18 @@ const Welcome: FC<Props> = ({navigation}) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  welcomeImg: {
+    width: '100%',
+    height: height / 2.5,
+  },
+  header: {
+    color: colors.white,
+  },
+  title: {
+    color: colors.primary,
+  },
+});
 
 export default Welcome;

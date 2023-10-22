@@ -8,34 +8,18 @@ import {
 } from 'react-native';
 import {colors, globalStyles} from '../../themes';
 import {Button, Divider, Input, Text} from '../../components';
-import {EyelashIcon, LockIcon, UserTagIcon} from '../../assets/icons';
-
-const styles = StyleSheet.create({
-  logo: {
-    ...globalStyles.logo,
-    alignSelf: 'center',
-  },
-  welcomeBack: {
-    color: colors.white,
-    marginTop: 20,
-  },
-  forgotPass: {
-    textAlign: 'right',
-    color: colors.label,
-    marginTop: 5,
-  },
-  forgotPassWrapper: {
-    alignSelf: 'flex-end',
-  },
-  loginWrapper: {
-    marginTop: 40,
-  },
-  divider: {
-    marginVertical: 30,
-  },
-});
+import {
+  EyelashIcon,
+  GoogleIcon,
+  LockIcon,
+  UserTagIcon,
+} from '../../assets/icons';
 
 const Login = () => {
+  const renderGoogleIcon = () => {
+    return <GoogleIcon />;
+  };
+
   return (
     <View style={globalStyles.container}>
       <SafeAreaView style={globalStyles.flex}>
@@ -67,10 +51,51 @@ const Login = () => {
             </Button>
           </View>
           <Divider dividerText="or continue with" style={styles.divider} />
+          <View>
+            <Button mode="outlined" onPress={() => {}} icon={renderGoogleIcon}>
+              Google
+            </Button>
+          </View>
+          <Text variant="bodyMedium" style={styles.noAccount}>
+            Don't have an account?{' '}
+            <TouchableOpacity>
+              <Text style={globalStyles.textPrimary}>Sign Up</Text>
+            </TouchableOpacity>
+          </Text>
         </View>
       </SafeAreaView>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  logo: {
+    ...globalStyles.logo,
+    alignSelf: 'center',
+  },
+  welcomeBack: {
+    color: colors.white,
+    marginTop: 20,
+  },
+  forgotPass: {
+    textAlign: 'right',
+    color: colors.label,
+    marginTop: 5,
+  },
+  forgotPassWrapper: {
+    alignSelf: 'flex-end',
+  },
+  loginWrapper: {
+    marginTop: 40,
+  },
+  divider: {
+    marginVertical: 40,
+  },
+  noAccount: {
+    color: colors.label,
+    marginTop: 20,
+    textAlign: 'center',
+  },
+});
 
 export default Login;

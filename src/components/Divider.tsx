@@ -4,24 +4,6 @@ import {Divider as PaperDivider} from 'react-native-paper';
 import Text from './Text';
 import {colors, globalStyles} from '../themes';
 
-const styles = StyleSheet.create({
-  wrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  dividerText: {
-    color: colors.label,
-    paddingHorizontal: 20,
-  },
-  divider: {
-    ...globalStyles.flex,
-    borderColor: colors.label,
-  },
-  soloDivider: {
-    borderColor: colors.label,
-  },
-});
-
 interface Props {
   dividerText?: string;
   style?: ViewStyle;
@@ -48,5 +30,23 @@ const Divider: FC<Props> = ({dividerText, style}) => {
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  wrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  dividerText: {
+    color: colors.label,
+    paddingHorizontal: 20,
+  },
+  divider: {
+    ...globalStyles.flex,
+    borderColor: colors.label,
+  },
+  soloDivider: {
+    borderColor: colors.label,
+  },
+});
 
 export default Divider;

@@ -9,36 +9,6 @@ import {colors, fontConfig, globalStyles} from '../themes';
 import {StyleSheet, View} from 'react-native';
 import Text from './Text';
 
-const styles = StyleSheet.create({
-  wrapper: {
-    marginVertical: 10,
-  },
-  outline: {
-    borderRadius: 0,
-    backgroundColor: colors.foreground,
-    borderWidth: 1,
-  },
-  label: {
-    color: colors.label,
-    marginBottom: 10,
-  },
-  error: {
-    color: MD3Colors.error50,
-  },
-  leftIcon: {
-    position: 'absolute',
-    zIndex: 1000,
-    left: 15,
-    top: 12,
-  },
-  rightIcon: {
-    position: 'absolute',
-    zIndex: 1000,
-    right: 15,
-    top: 12,
-  },
-});
-
 interface Props extends TextInputProps {
   inputLabel?: string;
   renderError?: boolean;
@@ -90,5 +60,35 @@ const Input: FC<Props> = props => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  wrapper: {
+    marginVertical: 10,
+  },
+  outline: {
+    borderRadius: 0,
+    backgroundColor: colors.foreground,
+    borderWidth: 1,
+  },
+  label: {
+    color: colors.label,
+    marginBottom: 10,
+  },
+  error: {
+    color: MD3Colors.error50,
+  },
+  leftIcon: {
+    position: 'absolute',
+    zIndex: 1000,
+    left: 15,
+    top: 12,
+  },
+  rightIcon: {
+    position: 'absolute',
+    zIndex: 1000,
+    right: 15,
+    top: 12,
+  },
+});
 
 export default Input;

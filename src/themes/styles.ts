@@ -7,6 +7,9 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 20,
   },
+  /**
+   * image styles
+   */
   logo: {
     height: 100,
     width: 100,
@@ -17,7 +20,13 @@ export const globalStyles = StyleSheet.create({
   relative: {
     position: 'relative',
   },
+  /**
+   * text styles
+   */
   textAlignAuto: {
     textAlign: 'auto',
+  },
+  textPrimary: {
+    color: colors.primary,
   },
 });
