@@ -1,0 +1,358 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignInScreen should render correctly 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    {
+      "flex": 1,
+    }
+  }
+>
+  <RNSScreenStack
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <RNSScreen
+      collapsable={false}
+      gestureResponseDistance={
+        {
+          "bottom": -1,
+          "end": -1,
+          "start": -1,
+          "top": -1,
+        }
+      }
+      nativeBackButtonDismissalEnabled={false}
+      onAppear={[Function]}
+      onDisappear={[Function]}
+      onDismissed={[Function]}
+      onGestureCancel={[Function]}
+      onHeaderBackButtonClicked={[Function]}
+      onNativeDismissCancelled={[Function]}
+      onTransitionProgress={[Function]}
+      onWillDisappear={[Function]}
+      replaceAnimation="push"
+      sheetAllowedDetents="large"
+      sheetCornerRadius={-1}
+      sheetExpandsWhenScrolledToEdge={true}
+      sheetGrabberVisible={false}
+      sheetLargestUndimmedDetent="all"
+      stackPresentation="push"
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      swipeDirection="horizontal"
+    >
+      <View
+        accessibilityElementsHidden={false}
+        importantForAccessibility="auto"
+        style={
+          {
+            "flex": 1,
+            "flexDirection": "column-reverse",
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            [
+              {
+                "flex": 1,
+              },
+              {
+                "backgroundColor": "rgb(242, 242, 242)",
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              {
+                "backgroundColor": "#212832",
+                "flex": 1,
+                "paddingHorizontal": 20,
+              }
+            }
+          >
+            <RCTSafeAreaView
+              style={
+                {
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flex": 1,
+                  }
+                }
+              >
+                <Image
+                  resizeMode="center"
+                  source={
+                    {
+                      "testUri": "../../../src/assets/images/logo.png",
+                    }
+                  }
+                  style={
+                    {
+                      "height": 100,
+                      "width": 100,
+                    }
+                  }
+                />
+                <Image
+                  resizeMode="contain"
+                  source={
+                    {
+                      "testUri": "../../../src/assets/images/welcome.png",
+                    }
+                  }
+                  style={
+                    {
+                      "height": 533.6,
+                      "width": "100%",
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontFamily": "System",
+                          "fontSize": 45,
+                          "fontWeight": "400",
+                          "letterSpacing": 0,
+                          "lineHeight": 52,
+                        },
+                        {
+                          "color": "#FFFFFF",
+                        },
+                      ],
+                    ]
+                  }
+                >
+                  Manage your Task with
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontFamily": "System",
+                          "fontSize": 45,
+                          "fontWeight": "400",
+                          "letterSpacing": 0,
+                          "lineHeight": 52,
+                        },
+                        {
+                          "color": "#FFD56B",
+                        },
+                      ],
+                    ]
+                  }
+                >
+                  DayTask
+                </Text>
+              </View>
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "backgroundColor": "rgba(103, 80, 164, 1)",
+                    "borderRadius": 0,
+                    "shadowColor": "#000",
+                    "shadowOffset": {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0,
+                    "shadowRadius": 0,
+                  }
+                }
+                testID="button-container-outer-layer"
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "rgba(103, 80, 164, 1)",
+                      "borderColor": "transparent",
+                      "borderRadius": 0,
+                      "borderStyle": "solid",
+                      "borderWidth": 0,
+                      "flex": undefined,
+                      "minWidth": 64,
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="button-container"
+                >
+                  <View
+                    accessibilityRole="button"
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": undefined,
+                        "disabled": false,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      [
+                        {
+                          "overflow": "hidden",
+                        },
+                        {
+                          "borderRadius": 0,
+                        },
+                      ]
+                    }
+                    testID="button"
+                  >
+                    <View
+                      style={
+                        [
+                          {
+                            "alignItems": "center",
+                            "flexDirection": "row",
+                            "justifyContent": "center",
+                          },
+                          {
+                            "paddingVertical": 5,
+                          },
+                        ]
+                      }
+                    >
+                      <Text
+                        numberOfLines={1}
+                        selectable={false}
+                        style={
+                          [
+                            {
+                              "textAlign": "left",
+                            },
+                            {
+                              "color": "rgba(28, 27, 31, 1)",
+                              "writingDirection": "ltr",
+                            },
+                            [
+                              {
+                                "fontFamily": "System",
+                                "fontSize": 14,
+                                "fontWeight": "500",
+                                "letterSpacing": 0.1,
+                                "lineHeight": 20,
+                              },
+                              [
+                                {
+                                  "marginHorizontal": 16,
+                                  "marginVertical": 9,
+                                  "textAlign": "center",
+                                },
+                                false,
+                                {
+                                  "marginHorizontal": 24,
+                                  "marginVertical": 10,
+                                },
+                                undefined,
+                                false,
+                                {
+                                  "color": "#000000",
+                                  "fontFamily": "System",
+                                  "fontSize": 14,
+                                  "fontWeight": "500",
+                                  "letterSpacing": 0.1,
+                                  "lineHeight": 20,
+                                },
+                                undefined,
+                              ],
+                            ],
+                          ]
+                        }
+                        testID="button-text"
+                      >
+                        Let's Start
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </RCTSafeAreaView>
+          </View>
+        </View>
+      </View>
+      <RNSScreenStackHeaderConfig
+        backButtonInCustomView={false}
+        backTitleVisible={true}
+        backgroundColor="rgb(255, 255, 255)"
+        color="rgb(0, 122, 255)"
+        direction="ltr"
+        disableBackButtonMenu={false}
+        hidden={true}
+        hideBackButton={false}
+        largeTitleHideShadow={false}
+        title="Welcome"
+        titleColor="rgb(28, 28, 30)"
+        topInsetEnabled={false}
+        translucent={false}
+      />
+    </RNSScreen>
+  </RNSScreenStack>
+</RNCSafeAreaProvider>
+`;
