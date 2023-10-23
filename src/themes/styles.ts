@@ -26,6 +26,12 @@ export const globalStyles = StyleSheet.create({
   textAlignAuto: {
     textAlign: 'auto',
   },
+  textWhite: {
+    color: colors.white,
+  },
+  textLabel: {
+    color: colors.label,
+  },
   textPrimary: {
     color: colors.primary,
   },

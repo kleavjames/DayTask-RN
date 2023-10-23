@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {
   Image,
   SafeAreaView,
@@ -6,6 +6,9 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import {Formik} from 'formik';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import * as Yup from 'yup';
 import {colors, globalStyles} from '../../themes';
 import {Button, Divider, Input, Text} from '../../components';
 import {
@@ -14,10 +17,26 @@ import {
   LockIcon,
   UserTagIcon,
 } from '../../assets/icons';
+import {AuthStackParamList} from '../../navigation/auth';
 
-const Login = () => {
+type Props = NativeStackScreenProps<AuthStackParamList, 'Login'>;
+
+const validationSchema = Yup.object().shape({
+  email: Yup.string()
+    .email('Please enter a valid email')
+    .required('Email address is required'),
+  password: Yup.string()
+    .required('Password is required')
+    .min(4, 'Password must be at least 4 characters'),
+});
+
+const Login: FC<Props> = ({navigation}) => {
   const renderGoogleIcon = () => {
     return <GoogleIcon />;
+  };
+
+  const onNavigateSignUp = () => {
+    navigation.navigate('SignUp');
   };
 
   return (
@@ -32,24 +51,60 @@ const Login = () => {
           <Text variant="titleLarge" style={styles.welcomeBack}>
             Welcome Back!
           </Text>
-          <Input inputLabel="Email Address" left={<UserTagIcon />} />
-          <Input
-            inputLabel="Password"
-            secureTextEntry
-            left={<LockIcon />}
-            right={<EyelashIcon />}
-            renderRight
-          />
-          <TouchableOpacity style={styles.forgotPassWrapper}>
-            <Text style={styles.forgotPass} variant="bodyMedium">
-              Forgot Password?
-            </Text>
-          </TouchableOpacity>
-          <View style={styles.loginWrapper}>
-            <Button mode="contained" onPress={() => {}}>
-              Log In
-            </Button>
-          </View>
+          <Formik
+            initialValues={{email: '', password: ''}}
+            onSubmit={values => console.log(values)}
+            validationSchema={validationSchema}>
+            {({
+              values,
+              handleChange,
+              handleSubmit,
+              handleBlur,
+              errors,
+              touched,
+            }) => (
+              <>
+                <Input
+                  inputLabel="Email Address"
+                  testID="login-email"
+                  onChangeText={handleChange('email')}
+                  onBlur={handleBlur('email')}
+                  value={values.email}
+                  autoCapitalize="none"
+                  left={<UserTagIcon />}
+                  renderError={!!errors.email && !!touched.email}
+                  errorMessage={errors.email}
+                />
+                <Input
+                  inputLabel="Password"
+                  testID="login-password"
+                  secureTextEntry
+                  left={<LockIcon />}
+                  onChangeText={handleChange('password')}
+                  onBlur={handleBlur('password')}
+                  value={values.password}
+                  autoCapitalize="none"
+                  right={<EyelashIcon />}
+                  renderRight
+                  renderError={!!errors.password && !!touched.password}
+                  errorMessage={errors.password}
+                />
+                <TouchableOpacity style={styles.forgotPassWrapper}>
+                  <Text style={styles.forgotPass} variant="bodyMedium">
+                    Forgot Password?
+                  </Text>
+                </TouchableOpacity>
+                <View style={styles.loginWrapper}>
+                  <Button
+                    testID="login-btn"
+                    mode="contained"
+                    onPress={() => handleSubmit()}>
+                    Log In
+                  </Button>
+                </View>
+              </>
+            )}
+          </Formik>
           <Divider dividerText="or continue with" style={styles.divider} />
           <View>
             <Button mode="outlined" onPress={() => {}} icon={renderGoogleIcon}>
@@ -58,7 +113,7 @@ const Login = () => {
           </View>
           <Text variant="bodyMedium" style={styles.noAccount}>
             Don't have an account?{' '}
-            <TouchableOpacity>
+            <TouchableOpacity onPress={onNavigateSignUp} testID="signup-btn">
               <Text style={globalStyles.textPrimary}>Sign Up</Text>
             </TouchableOpacity>
           </Text>

@@ -8,17 +8,16 @@ import AuthStack from '../../navigation/auth';
 jest.useFakeTimers();
 
 describe('SignInScreen', () => {
-  it('should show the Welcome text', () => {
+  it('should render correctly', () => {
     const component = (
       <NavigationContainer>
         <AuthStack />
       </NavigationContainer>
     );
 
-    render(component);
+    const tree = render(component).toJSON();
 
-    expect(screen.getByText('Manage your Task with')).toBeOnTheScreen();
-    expect(screen.getByText('DayTask')).toBeOnTheScreen();
+    expect(tree).toMatchSnapshot();
   });
 
   it("should navigate to login screen when pressing let's start", async () => {
