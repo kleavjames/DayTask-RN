@@ -7,27 +7,6 @@ import {AuthStackParamList} from '../../navigation/auth';
 
 const {height} = Dimensions.get('window');
 
-const styles = StyleSheet.create({
-  logo: {
-    height: 100,
-    width: 100,
-  },
-  welcomeImg: {
-    width: '100%',
-    height: height / 2.5,
-  },
-  header: {
-    color: colors.white,
-    fontSize: 50,
-    lineHeight: 55,
-  },
-  title: {
-    color: colors.primary,
-    fontSize: 50,
-    lineHeight: 55,
-  },
-});
-
 type Props = NativeStackScreenProps<AuthStackParamList, 'Welcome'>;
 
 const Welcome: FC<Props> = ({navigation}) => {
@@ -40,7 +19,7 @@ const Welcome: FC<Props> = ({navigation}) => {
       <SafeAreaView style={globalStyles.flex}>
         <View style={globalStyles.flex}>
           <Image
-            style={styles.logo}
+            style={globalStyles.logo}
             source={require('../../assets/images/logo.png')}
             resizeMode="center"
           />
@@ -49,22 +28,32 @@ const Welcome: FC<Props> = ({navigation}) => {
             source={require('../../assets/images/welcome.png')}
             resizeMode="contain"
           />
-          <Text variant="displayLarge" style={styles.header}>
+          <Text variant="displayMedium" style={styles.header}>
             Manage your Task with
           </Text>
-          <Text variant="displayLarge" style={styles.title}>
+          <Text variant="displayMedium" style={styles.title}>
             DayTask
           </Text>
         </View>
-        <Button
-          mode="contained"
-          textColor={colors.black}
-          onPress={navigateStart}>
+        <Button mode="contained" onPress={navigateStart}>
           Let's Start
         </Button>
       </SafeAreaView>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  welcomeImg: {
+    width: '100%',
+    height: height / 2.5,
+  },
+  header: {
+    color: colors.white,
+  },
+  title: {
+    color: colors.primary,
+  },
+});
 
 export default Welcome;
