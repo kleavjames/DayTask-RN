@@ -31,7 +31,7 @@ const validationSchema = Yup.object().shape({
     .required('Email address is required'),
   password: Yup.string()
     .required('Password is required')
-    .min(4, 'Password must be at least 4 characters'),
+    .min(6, 'Password must be at least 6 characters'),
 });
 
 const Login: FC<Props> = ({navigation}) => {
@@ -53,6 +53,7 @@ const Login: FC<Props> = ({navigation}) => {
       await auth().signInWithEmailAndPassword(values.email, values.password);
       setOnLogin(false);
     } catch (error) {
+      console.log(error);
       setOnLogin(false);
       setOnLoginFailed(true);
     }
