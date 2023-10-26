@@ -1,6 +1,24 @@
 import React, {FC} from 'react';
 import {Button as PaperButton, ButtonProps} from 'react-native-paper';
 import {StyleSheet} from 'react-native';
+import {colors, fontConfig} from '../themes';
+
+const Button: FC<ButtonProps> = props => {
+  return (
+    <PaperButton
+      {...props}
+      style={[styles.border, props.style]}
+      contentStyle={[styles.padding, props.contentStyle]}
+      textColor={props.mode === 'contained' ? colors.black : colors.white}
+      theme={{
+        fonts: {
+          default: fontConfig.default,
+        },
+      }}>
+      {props.children}
+    </PaperButton>
+  );
+};
 
 const styles = StyleSheet.create({
   border: {
@@ -10,13 +28,5 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
   },
 });
-
-const Button: FC<ButtonProps> = props => {
-  return (
-    <PaperButton {...props} style={styles.border} contentStyle={styles.padding}>
-      {props.children}
-    </PaperButton>
-  );
-};
 
 export default Button;
