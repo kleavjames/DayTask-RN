@@ -38,7 +38,7 @@ const Input: FC<Props> = props => {
           outlineColor={colors.foreground}
           textColor={colors.white}
           dense
-          contentStyle={globalStyles.textAlignAuto}
+          contentStyle={[globalStyles.textAlignAuto, props.contentStyle]}
         />
         {props.renderRight && (
           <View style={styles.rightIcon}>{props.right}</View>

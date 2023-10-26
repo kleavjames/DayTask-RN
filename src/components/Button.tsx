@@ -7,8 +7,8 @@ const Button: FC<ButtonProps> = props => {
   return (
     <PaperButton
       {...props}
-      style={styles.border}
-      contentStyle={styles.padding}
+      style={[styles.border, props.style]}
+      contentStyle={[styles.padding, props.contentStyle]}
       textColor={props.mode === 'contained' ? colors.black : colors.white}
       theme={{
         fonts: {

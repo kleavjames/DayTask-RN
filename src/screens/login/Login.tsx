@@ -14,13 +14,8 @@ import {Formik, FormikValues} from 'formik';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import * as Yup from 'yup';
 import {colors, globalStyles} from '../../themes';
-import {Alert, Button, Divider, Input, Loader, Text} from '../../components';
-import {
-  EyelashIcon,
-  GoogleIcon,
-  LockIcon,
-  UserTagIcon,
-} from '../../assets/icons';
+import {Alert, Button, Input, Loader, Text} from '../../components';
+import {EyelashIcon, LockIcon, UserTagIcon} from '../../assets/icons';
 import {AuthStackParamList} from '../../navigation/auth';
 
 type Props = NativeStackScreenProps<AuthStackParamList, 'Login'>;
@@ -37,10 +32,6 @@ const validationSchema = Yup.object().shape({
 const Login: FC<Props> = ({navigation}) => {
   const [onLogin, setOnLogin] = useState(false);
   const [loginFailed, setOnLoginFailed] = useState(false);
-
-  const renderGoogleIcon = () => {
-    return <GoogleIcon />;
-  };
 
   const onNavigateSignUp = () => {
     navigation.navigate('SignUp');
@@ -118,11 +109,11 @@ const Login: FC<Props> = ({navigation}) => {
                       renderError={!!errors.password && !!touched.password}
                       errorMessage={errors.password}
                     />
-                    <TouchableOpacity style={styles.forgotPassWrapper}>
+                    {/* <TouchableOpacity style={styles.forgotPassWrapper}>
                       <Text style={styles.forgotPass} variant="bodyMedium">
                         Forgot Password?
                       </Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                     <View style={styles.loginWrapper}>
                       <Button
                         testID="login-btn"
@@ -134,7 +125,7 @@ const Login: FC<Props> = ({navigation}) => {
                   </>
                 )}
               </Formik>
-              <Divider dividerText="or continue with" style={styles.divider} />
+              {/* <Divider dividerText="or continue with" style={styles.divider} />
               <View>
                 <Button
                   mode="outlined"
@@ -142,7 +133,7 @@ const Login: FC<Props> = ({navigation}) => {
                   icon={renderGoogleIcon}>
                   Google
                 </Button>
-              </View>
+              </View> */}
               <Text variant="bodyMedium" style={styles.noAccount}>
                 Don't have an account?{' '}
                 <TouchableOpacity

@@ -14,22 +14,8 @@ import auth from '@react-native-firebase/auth';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {colors, globalStyles} from '../../themes';
-import {
-  Alert,
-  Button,
-  Checkbox,
-  Divider,
-  Input,
-  Loader,
-  Text,
-} from '../../components';
-import {
-  EyelashIcon,
-  GoogleIcon,
-  LockIcon,
-  UserIcon,
-  UserTagIcon,
-} from '../../assets/icons';
+import {Alert, Button, Checkbox, Input, Loader, Text} from '../../components';
+import {EyelashIcon, LockIcon, UserIcon, UserTagIcon} from '../../assets/icons';
 import {AuthStackParamList} from '../../navigation/auth';
 import {useUserStore} from '../../hooks/useUser';
 
@@ -57,10 +43,6 @@ const SignUp: FC<Props> = ({navigation}) => {
   const [onSignup, setOnSignup] = useState(false);
   const [signupFailed, setSignupFailed] = useState(false);
   const [acceptTerms, setAcceptTerms] = useState(false);
-
-  const renderGoogleIcon = () => {
-    return <GoogleIcon />;
-  };
 
   const onPressLogin = () => {
     navigation.pop();
@@ -202,7 +184,7 @@ const SignUp: FC<Props> = ({navigation}) => {
                   </>
                 )}
               </Formik>
-              <Divider dividerText="or continue with" style={styles.divider} />
+              {/* <Divider dividerText="or continue with" style={styles.divider} />
               <View>
                 <Button
                   mode="outlined"
@@ -210,7 +192,7 @@ const SignUp: FC<Props> = ({navigation}) => {
                   icon={renderGoogleIcon}>
                   Google
                 </Button>
-              </View>
+              </View> */}
               <Text variant="bodyMedium" style={styles.noAccount}>
                 Already have an account?{' '}
                 <TouchableOpacity onPress={onPressLogin}>
