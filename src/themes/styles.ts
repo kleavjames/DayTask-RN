@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {colors} from './colors';
 
 export const globalStyles = StyleSheet.create({
@@ -6,6 +6,7 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: colors.background,
     flex: 1,
     paddingHorizontal: 20,
+    paddingVertical: Platform.OS === 'android' ? 20 : 0,
   },
   /**
    * image styles
