@@ -2,6 +2,7 @@ import React from 'react';
 import {render, screen, fireEvent} from '@testing-library/react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import AuthStack from '../../navigation/auth';
+import {PaperProvider} from 'react-native-paper';
 
 // solves my issue on svg
 // reference error
@@ -10,9 +11,11 @@ jest.useFakeTimers();
 describe('SignInScreen', () => {
   it('should render correctly', () => {
     const component = (
-      <NavigationContainer>
-        <AuthStack />
-      </NavigationContainer>
+      <PaperProvider>
+        <NavigationContainer>
+          <AuthStack />
+        </NavigationContainer>
+      </PaperProvider>
     );
 
     const tree = render(component).toJSON();
@@ -22,9 +25,11 @@ describe('SignInScreen', () => {
 
   it("should navigate to login screen when pressing let's start", async () => {
     const component = (
-      <NavigationContainer>
-        <AuthStack />
-      </NavigationContainer>
+      <PaperProvider>
+        <NavigationContainer>
+          <AuthStack />
+        </NavigationContainer>
+      </PaperProvider>
     );
 
     render(component);

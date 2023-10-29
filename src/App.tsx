@@ -7,7 +7,7 @@ import {
 import {colors as ownColors, fontConfig} from './themes';
 import RootStack from './navigation/root';
 
-const theme = {
+export const theme = {
   ...DefaultTheme,
   // Specify custom property
   myOwnProperty: true,

@@ -2,6 +2,7 @@ import React from 'react';
 // import {NavigationContainer} from '@react-navigation/native';
 import {render, screen, fireEvent, act} from '@testing-library/react-native';
 import Login from './Login';
+import {PaperProvider} from 'react-native-paper';
 
 jest.useFakeTimers();
 
@@ -17,15 +18,26 @@ describe('LoginScreen', () => {
 
   it('should render correctly', () => {
     props = createTestProps({});
-    const tree = render(<Login {...props} />).toJSON();
+    const component = (
+      <PaperProvider>
+        <Login {...props} />
+      </PaperProvider>
+    );
+
+    const tree = render(component).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
   it('should show the correct input validation', async () => {
     props = createTestProps({});
+    const component = (
+      <PaperProvider>
+        <Login {...props} />
+      </PaperProvider>
+    );
 
-    render(<Login {...props} />);
+    render(component);
 
     const emailAdd = screen.getByTestId('login-email');
     const password = screen.getByTestId('login-password');
@@ -41,8 +53,13 @@ describe('LoginScreen', () => {
 
   it('should navigate to sign up screen', async () => {
     props = createTestProps({});
+    const component = (
+      <PaperProvider>
+        <Login {...props} />
+      </PaperProvider>
+    );
 
-    render(<Login {...props} />);
+    render(component);
 
     const signup = screen.getByTestId('signup-btn');
     await act(() => {
