@@ -1,5 +1,4 @@
 import React from 'react';
-// import {NavigationContainer} from '@react-navigation/native';
 import {render, screen, fireEvent, act} from '@testing-library/react-native';
 import Login from './Login';
 import {PaperProvider} from 'react-native-paper';

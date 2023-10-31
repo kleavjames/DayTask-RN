@@ -175,7 +175,7 @@ const SignUp: FC<Props> = ({navigation}) => {
                     </Checkbox>
                     <View style={styles.loginWrapper}>
                       <Button
-                        testID="login-btn"
+                        testID="signup-btn"
                         mode="contained"
                         onPress={() => handleSubmit()}>
                         Sign Up
@@ -195,7 +195,9 @@ const SignUp: FC<Props> = ({navigation}) => {
               </View> */}
               <Text variant="bodyMedium" style={styles.noAccount}>
                 Already have an account?{' '}
-                <TouchableOpacity onPress={onPressLogin}>
+                <TouchableOpacity
+                  onPress={onPressLogin}
+                  testID="signup-login-btn">
                   <Text style={globalStyles.textPrimary}>Login</Text>
                 </TouchableOpacity>
               </Text>
